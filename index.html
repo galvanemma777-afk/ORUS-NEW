@@ -68,31 +68,6 @@ nav{position:sticky;top:0;z-index:50;background:rgba(5,4,3,.88);backdrop-filter:
 .offer .big{font-family:'Cinzel',serif;font-size:clamp(1.3rem,3vw,1.9rem);font-weight:700;margin-top:6px}
 .cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 
-/* Juegos */
-.games{padding:70px 0}
-.head{text-align:center;margin-bottom:40px}
-.head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-top:10px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.game{position:relative;border-radius:6px;padding:38px 20px 26px;text-align:center;background:linear-gradient(180deg,#14100a,#0a0806);border:1px solid var(--line);transition:transform .3s,box-shadow .3s,border-color .3s;overflow:hidden}
-.game::before{content:"";position:absolute;inset:8px;border:1px solid rgba(212,175,95,.12);border-radius:3px;pointer-events:none}
-.game:hover{transform:translateY(-6px);border-color:var(--g2);box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 40px rgba(212,175,95,.18)}
-.suit{font-size:3.6rem;line-height:1;font-family:'Cinzel',serif;margin-bottom:18px;display:inline-block;transition:transform .35s}
-.game:hover .suit{transform:scale(1.15)}
-.game h3{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;letter-spacing:.08em}
-.game p{color:var(--muted);font-size:.82rem;margin-top:6px}
-.tag{position:absolute;top:16px;right:16px;font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g1);border:1px solid var(--line);padding:4px 9px;border-radius:999px}
-.tag.live{display:flex;gap:6px;align-items:center}
-.tag.live::before{content:"";width:6px;height:6px;border-radius:50%;background:#e23b3b;box-shadow:0 0 8px #e23b3b;animation:blink 1.3s infinite}
-@keyframes blink{50%{opacity:.3}}
-
-/* Beneficios */
-.perks{padding:10px 0 70px}
-.perk-row{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}
-.perk{padding:30px 20px;text-align:center}
-.perk+.perk{border-left:1px solid var(--line)}
-.perk b{font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:.06em;display:block;margin-bottom:4px}
-.perk span{color:var(--muted);font-size:.85rem}
-
 /* Contacto */
 .contact{padding:20px 0 90px}
 .cbox{border-radius:6px;padding:60px 30px;text-align:center;position:relative;background:radial-gradient(70% 120% at 50% 0%,rgba(212,175,95,.16),transparent 65%),#0a0806;border:1px solid var(--line)}
@@ -104,19 +79,6 @@ footer{padding:34px 0;border-top:1px solid var(--line);font-size:.78rem;color:va
 .foot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between}
 .resp{display:flex;align-items:center;gap:12px;max-width:600px}
 .age{width:40px;height:40px;border-radius:50%;border:2px solid var(--g2);display:grid;place-items:center;font-weight:700;color:var(--g1);flex:none;font-size:.85rem}
-
-/* Pasos y pagos */
-.steps{padding:30px 0 70px}
-.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.step{text-align:center;padding:34px 24px;border:1px solid var(--line);border-radius:6px;background:linear-gradient(180deg,#14100a,#0a0806)}
-.num{font-family:'Cinzel',serif;font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:12px}
-.step h3{font-family:'Cinzel',serif;font-size:1.15rem;letter-spacing:.06em;margin-bottom:6px}
-.step p{color:var(--muted);font-size:.88rem}
-.pays{padding:0 0 70px}
-.pay-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.pay-row span{padding:12px 22px;border:1px solid var(--line);border-radius:999px;font-weight:600;font-size:.88rem;color:var(--g1);letter-spacing:.04em;background:rgba(212,175,95,.05)}
-.pay-note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:18px}
-@media(max-width:700px){.step-grid{grid-template-columns:1fr}}
 
 /* Botón principal de contacto */
 .mega-wrap{margin:30px auto 6px;display:flex;justify-content:center}
@@ -140,9 +102,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);font-size:.78rem;color:va
 .wsp-float .tip{position:absolute;right:76px;background:var(--grad);color:#1a1205;font-weight:700;font-size:.78rem;letter-spacing:.06em;padding:8px 14px;border-radius:999px;white-space:nowrap}
 @keyframes ring{0%{box-shadow:0 0 0 0 rgba(212,175,95,.55)}70%{box-shadow:0 0 0 18px rgba(212,175,95,0)}100%{box-shadow:0 0 0 0 rgba(212,175,95,0)}}
 
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);gap:14px}}
 @media(max-width:700px){
-  .perk-row{grid-template-columns:1fr}.perk+.perk{border-left:0;border-top:1px solid var(--line)}
   .nav .btn{padding:10px 16px;font-size:.75rem}
   .brand small{display:none}
   .wsp-float .tip{display:none}
@@ -203,46 +163,9 @@ src="https://www.facebook.com/tr?id=1878180223351741&ev=PageView&noscript=1"
   </div>
 </section>
 
-<section class="games">
-  <div class="wrap">
-    <div class="head"><div class="eyebrow">Nuestras mesas</div><h2 class="display">Juegos <span class="gt">exclusivos</span></h2><div class="divider">♦</div></div>
-    <div class="grid">
-      <div class="game"><span class="tag live">En vivo</span><div class="suit gt">◎</div><h3>Ruleta</h3><p>Europea, con crupier en vivo</p></div>
-      <div class="game"><span class="tag">VIP</span><div class="suit gt">♠</div><h3>Blackjack</h3><p>Mesas privadas de alto nivel</p></div>
-      <div class="game"><span class="tag">Popular</span><div class="suit gt">♥</div><h3>Póker</h3><p>Texas Hold'em y torneos</p></div>
-      <div class="game"><span class="tag">Nuevo</span><div class="suit gt">♦</div><h3>Tragamonedas</h3><p>Los títulos más jugados</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="perks">
-  <div class="wrap perk-row">
-    <div class="perk"><b class="gt">$U 300</b><span>Depósito mínimo</span></div>
-    <div class="perk"><b class="gt">12:00 a 23:30</b><span>Horario de retiros</span></div>
-    <div class="perk"><b class="gt">Cajeros 24 h</b><span>Respuesta en minutos</span></div>
-  </div>
-</section>
 
-<section class="steps">
-  <div class="wrap">
-    <div class="head"><div class="eyebrow">Así de fácil</div><h2 class="display">Empezá en <span class="gt">3 pasos</span></h2><div class="divider">♦</div></div>
-    <div class="step-grid">
-      <div class="step"><div class="num gt">I</div><h3>Escribinos</h3><p>Mandanos un mensaje por WhatsApp y te creamos tu usuario.</p></div>
-      <div class="step"><div class="num gt">II</div><h3>Depositá</h3><p>Desde $U 300 por transferencia, red pagos o abitab.</p></div>
-      <div class="step"><div class="num gt">III</div><h3>Recibí tu 50%</h3><p>Te acreditamos el bono de bienvenida y a jugar.</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="pays">
-  <div class="wrap">
-    <div class="head"><div class="eyebrow">Depósitos y retiros</div><h2 class="display">Medios de <span class="gt">pago</span></h2><div class="divider">♦</div></div>
-    <div class="pay-row">
-      <span>BROU</span><span>Itaú</span><span>Santander</span><span>Scotiabank</span><span>MiDinero</span><span>Mercado Pago</span><span>Prex</span>
-    </div>
-    <p class="pay-note">Depositás y retirás con el mismo medio. Retiros de 12:00 a 23:30.</p>
-  </div>
-</section>
 
 <footer>
   <div class="wrap foot">
