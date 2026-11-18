@@ -234,7 +234,12 @@ src="https://www.facebook.com/tr?id=1144211418585075&ev=PageView&noscript=1"
     const msg = (MENSAJES[src] || MENSAJES.hero) + ' (ref: ' + ref + ')';
     a.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
     a.addEventListener('click', () => {
-      if (window.fbq) { fbq('track', 'Contact', {content_name: src}); fbq('track', 'Lead', {content_name: src}); }
+      if (window.fbq) {
+        // Conversión personalizada "WhatsAppClick" (píxel oruspix)
+        fbq('trackCustom', 'WhatsAppClick', {content_name: src, ref: ref});
+        fbq('track', 'Contact', {content_name: src});
+        fbq('track', 'Lead', {content_name: src});
+      }
     });
   });
 
