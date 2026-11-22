@@ -20,7 +20,12 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html, body { height: 100%; }
+    html {
+      height: 100%;
+      background-color: #150318;
+      background-image: linear-gradient(180deg, #24063f 0%, #150318 55%, #0c0208 100%);
+    }
+    body { height: auto; }
 
     body {
       min-height: 100vh;
@@ -31,7 +36,7 @@
         radial-gradient(ellipse 90% 45% at 50% 0%, #4a0d8c 0%, rgba(74,13,140,0) 70%),
         radial-gradient(ellipse 80% 40% at 50% 100%, #3a0620 0%, rgba(58,6,32,0) 75%),
         linear-gradient(180deg, #24063f 0%, #150318 55%, #0c0208 100%);
-      background-attachment: fixed;
+      background-color: transparent;
       display: flex;
       justify-content: center;
       overflow-x: hidden;
