@@ -215,8 +215,25 @@
     }
     .cta { padding-top: 16px; padding-bottom: 16px; }
   </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1018311190573332');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1018311190573332&ev=PageView&noscript=1"
+/></noscript>
   <main class="container">
 
     <!-- Logo -->
@@ -256,8 +273,7 @@
     </section>
 
     <!-- Botón: cambiá el href por tu link -->
-    <!-- Cambiá 598XXXXXXXX por tu número con código de país -->
-    <a class="cta" href="https://wa.me/598XXXXXXXX" target="_blank" rel="noopener">
+    <a class="cta wsp-link" data-src="hero" href="#" target="_blank" rel="noopener">
       <span class="wa-icon"><svg viewBox="0 0 32 32" width="26" height="26" fill="#fff" aria-hidden="true">
           <path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3 29l6.5-2c1.9 1 4.1 1.6 6.5 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.3c-2.1 0-4.1-.6-5.8-1.7l-.4-.2-3.9 1.2 1.2-3.8-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.1 16 5.1s11 4.8 11 10.7-4.9 10.5-11 10.5zm6-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6l-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.1 2.9 1.1 3.5.9 4.1.8.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/>
         </svg></span>
@@ -265,5 +281,25 @@
     </a>
 
   </main>
+<script>
+  const WHATSAPP = '5521920234018';
+  const qs = new URLSearchParams(location.search);
+  const ref = qs.get('ref') || qs.get('utm_campaign') || 'web';
+  const MENSAJES = {
+    hero: 'Hola ORUS! Quiero crear mi cuenta en las plataformas PLUS'
+  };
+  document.querySelectorAll('.wsp-link').forEach(a => {
+    const src = a.dataset.src || 'hero';
+    const msg = (MENSAJES[src] || MENSAJES.hero) + ' (ref: ' + ref + ')';
+    a.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg);
+    a.addEventListener('click', () => {
+      if (window.fbq) {
+        fbq('trackCustom', 'WhatsAppClick', {content_name: src, ref: ref});
+        fbq('track', 'Contact', {content_name: src});
+        fbq('track', 'Lead', {content_name: src});
+      }
+    });
+  });
+</script>
 </body>
 </html>
