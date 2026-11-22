@@ -176,7 +176,22 @@
       transition: transform .15s ease;
     }
 
+    .cta { cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+    .cta:hover {
+      transform: translateY(-3px) scale(1.03);
+      filter: brightness(1.08);
+      box-shadow: 0 0 40px rgba(236, 26, 133, 0.7), 0 12px 30px rgba(91, 60, 255, 0.35);
+    }
     .cta:active { transform: scale(0.98); }
+
+    .wa-icon { transition: transform .2s ease; }
+    .cta:hover .wa-icon { animation: wiggle .6s ease-in-out infinite; }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0) scale(1.12); }
+      25%      { transform: rotate(-14deg) scale(1.12); }
+      75%      { transform: rotate(14deg) scale(1.12); }
+    }
 
     .wa-icon {
       flex-shrink: 0;
